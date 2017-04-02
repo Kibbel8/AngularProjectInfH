@@ -1,0 +1,22 @@
+{
+  "name": "workshop4",
+  "version": "1.0.0",
+  "description": "workshop week 4",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "karma start test/karma.conf.js"
+  },
+  "author": "Adriaan van den Berg",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-ng-scenario": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.4"
+  }
+}

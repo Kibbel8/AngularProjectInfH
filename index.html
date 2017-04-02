@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="app/css/StyleSheet1.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+</head>
+<body ng-app="app" ng-controller="controller.index as ctrl">
+    <div id="kop">
+        <a class="linkopmaak" href="#/home">
+            <img id="image" src="/Content/Images/intosport.png" />
+        </a>
+        <a href="#/login" id="log_out" ng-show="isAuthenticated" ng-click="ctrl.logout();">Uitloggen</a>
+        <a href="#/login" id="log_in" ng-show="!isAuthenticated">Log in</a>
+        <!--<a href="#/register" id="register" ng-show="!User.isAuthenticated">Register</a>-->
+        <a href="#/winkelwagen" id="winkelwagen">Winkelwagen</a>
+        <a href="#/producten" id="edit"> <!--ng-show="ctrl.user.role == 'admin'"-->edit producten</a>
+        <a href="#/editOrders" id="edit"> <!--ng-show="ctrl.user.role == 'admin'"-->edit Orders</a>
+
+        <div id="dmenu1" style="position:absolute;left:0;" class="dmenu">
+            <a href="#/home">Producten</a>
+        </div>
+        <div id="dmenu2" class="dmenu">
+            <a href="#/winkelwagen">Winkelwagen</a>
+        </div>
+        <div id="dmenu3" class="dmenu">
+            <a href="#/login">Login</a>
+        </div>
+        <div id="dmenu4" class="dmenu" >
+            <a href="#/orders">Orders</a>
+        </div>
+        <div id="dmenu5" class="dmenu" ng-show="user.role=='admin'">
+            <a href="#/producten">Edit producten</a>
+        </div>
+        <div class="foto2" onclick="toggle_visibility('foo');">
+            <!--  <img class="foto2" src="@Url.Content("~/Content/Images/zoek.png")" />		-->
+        </div>
+    </div>
+    <div ng-view id="inhoud"></div>
+
+
+    <script src="../../../Scripts/angular.min.js"></script>
+    <script src="../../../Scripts/angular-route.min.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="app/js/upperFilter.js"></script>
+    <script src="app/js/Controllers/indexController.js"></script>
+    <script src="app/js/Services/localStorageService.js"></script>
+    <script src="app/js/Services/LoginService.js"></script>
+    <script src="app/js/Controllers/homeController.js"></script>
+    <script src="app/js/Controllers/winkelwagenController.js"></script>
+    <script src="app/js/Controllers/producten.js"></script>
+    <script src="app/js/Controllers/ordersController.js"></script>
+    <script src="app/js/Controllers/editOrdersController.js"></script>
+    <script src="app/js/Controllers/loginController.js"></script>
+</body>
+</html>

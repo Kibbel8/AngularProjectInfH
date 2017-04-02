@@ -1,0 +1,35 @@
+﻿<h2>Winkelwagen</h2>
+<table border="1" style="text-align:center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>naam</th>
+            <th>prijs</th>
+            <th>aantal</th>
+            <th>Verwijderen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="winkelWagen in ctrl.winkelWagen">
+            <td>{{winkelWagen.product_id}}</td>
+            <td>{{ctrl.productInfo[$index].naam}}</td>
+            <td>{{ctrl.productInfo[$index].prijs | currency:"€"}}</td>
+            <td><input type="number" ng-model="winkelWagen.hoeveelheid" style="width:50px;"/></td>
+            <td><button class="btn btn-danger" ng-click="ctrl.delete(winkelWagen)"><span class="glyphicon glyphicon-remove"></span></button></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <b>Totaalprijs: {{ctrl.totaal | currency:"€"}}</b>
+    <b ng-show="{{crl.winkelWagen.length === 0}}">Winkelwagen is leeg</b>
+    </p>
+<p>
+    <input type="button" value="terug naar webshop" onclick="parent.location= '#/home'" class="btn btn-primary" />
+    <input type="button" value="Wijzigingen opslaan" class="btn btn-success" ng-click="ctrl.opslaan();" />
+</p>
+<div ng-show="{{crl.winkelWagen.length !== 0}}">
+    <input type="button" class="btn btn-primary" value="Bevestig aankoop" ng-click="ctrl.maakOrder();" />
+    <input type="button" class="btn btn-danger" value="Winkelwagen leegmaken" ng-click="ctrl.winkelWagen = []; ctrl.opslaan()"/>
+</div>
+

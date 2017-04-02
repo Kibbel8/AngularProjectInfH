@@ -1,0 +1,43 @@
+﻿<div class="container">
+    <div ng-repeat="order in ctrl.orders">
+        <h3>Order ID: {{order.id}}</h3>
+
+        <h3>Producten: </h3>
+        <table class="table table-bordered" style="background-color:darkorange;">
+            <thead>
+                <tr>
+                    <th style="min-width:90px; max-width:110px; padding:8px 0">Product ID</th>
+                    <th style="max-width:80px; padding:8px 0">Hoeveelheid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="orderRegel in order.orderRegels">
+                    <td>
+                        <div>{{orderRegel.product_id}}</div>
+                    </td>
+                    <td>
+                        <span>{{orderRegel.hoeveelheid}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered" style="background-color:darkorange">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Status</th>
+                    <th>totaalPrijs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{order.user}}</td>
+                    <td>{{order.status}}</td>
+                    <td>{{order.totaalPrijs}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-danger" ng-click="ctrl.cancel(order)">Order annuleren</button>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿<div ng-repeat="product in ctrl.producten" class="producten">
+    <a href="/assortiment/product?productID=@Model.Producten[i].ID">
+        <img class="fotoProduct" ng-src="{{product.foto}}" />
+    </a>
+    {{product.naam | upperFilter}}
+    <br />
+    Prijs: {{product.prijs | currency:"€"}}
+    <button class="btn btn-primary" ng-click="product.adding = true" ng-show="!product.adding"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-shopping-cart"></span></button>
+    <input type="number" ng-show="product.adding" ng-model="product.hoeveelheid"/>
+    <button class="btn btn-success" ng-show="product.adding" ng-click="ctrl.toevoegenAanWinkelwagen($index);"><span class="glyphicon glyphicon-plus"></span></button>
+</div>

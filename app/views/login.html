@@ -1,0 +1,21 @@
+﻿<fieldset>
+    <legend>Inloggen</legend>
+
+    <div class="editor-label">
+        Naam
+    </div>
+    <div class="editor-field">
+        <input type="text" ng-model="ctrl.login.naam" id="naam"/>
+    </div>
+    <div class="editor-label">
+        Wachtwoord
+    </div>
+    <div class="editor-field">
+        <input type="password" ng-model="ctrl.login.password" id="wachtwoord"/>
+    </div>
+    <h4 id="message">{{ctrl.message}}</h4>
+    <p>
+        <input type="submit" value="log in" ng-click="ctrl.login()" id="submit"/>
+        <!--<input type="button" value="register" />-->
+    </p>
+</fieldset>
